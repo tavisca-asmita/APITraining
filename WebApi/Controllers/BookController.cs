@@ -22,37 +22,64 @@ namespace WebApi.Controllers
 
         // GET: api/Book
         [HttpGet]
-        public List<Book> Get()
+        public ActionResult<List<Book>> Get()
         {
-            return BookService.Get();
+            List<Book> bookList = BookService.Get();
+            if (bookList == null)
+                return NoContent();
+            return Ok(bookList);
         }
 
         // GET: api/Book/5
         [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        public ActionResult<IEnumerable<Book>> Get(int id)
         {
-            return BookService.Get(id);
+            Book book = BookService.Get(id);
+            if (book != null)
+                return Ok(book);
+            return NoContent();
         }
 
         // POST: api/Book
         [HttpPost]
-        public List<Book> Post([FromBody] Book book)
+        public ActionResult<string> Post([FromBody] Book book)
         {
-            return BookService.Post(book);
+            int status = BookService.Post(book);
+            if (status == -1)
+                return BadRequest("Incorrect format");
+            if (status == 0)
+            {
+                return BadRequest("ID already exists");
+            }
+            return book.Id + " Added";
         }
 
         // PUT: api/Book/5
         [HttpPut("{id}")]
-        public List<Book> Put(int id, [FromBody] string name)
+        public ActionResult<string> Put(int id, [FromBody] Book book)
         {
-            return BookService.Put(id, name);
+            int status = BookService.Put(id, book);
+            if (status == -1)
+            {
+                return BadRequest("ID can not be negative");
+            }
+            if (status == 0)
+            {
+                return NoContent();
+            }
+            return id + " Updated";
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public List<Book> Delete(int id)
+        public ActionResult<string> Delete(int id)
         {
-            return BookService.Delete(id);
+            int status = BookService.Delete(id);
+            if (status == 0)
+            {
+                return NoContent();
+            }
+            return id + " Deleted";
         }
     }
 }

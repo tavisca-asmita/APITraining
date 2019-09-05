@@ -37,8 +37,16 @@ namespace WebAPITests
         [Fact]
         public void GetByIdTest()
         {
-            string bookName = BookService.Get(1);
-            Assert.Equal("C#", bookName);
+            Book book = BookService.Get(1);
+            Book expectedBook = new Book
+            {
+                Name = "C#",
+                Id = 1,
+                Price = 50,
+                Author = "C# Author",
+                Category = "Programming Language"
+            };
+            Assert.Equal(expectedBook, BookService.Get(1));
         }
 
         [Fact]
@@ -52,9 +60,8 @@ namespace WebAPITests
                 Category = "Programming",
                 Price = 100
             };
-            int booksCount = BookList.Count;
-            List<Book> bookList = BookService.Post(book);
-            Assert.Equal(booksCount + 1, bookList.Count);
+            int status = BookService.Post(book);
+            Assert.Equal(1, status);
         }
     }
 }

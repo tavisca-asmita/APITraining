@@ -18,18 +18,17 @@ namespace WebApi.Services
             BookList = BookData.GetBookList();
         }
 
-        public List<Book> Delete(int id)
+        public int Delete(int id)
         {
             foreach (var item in BookList)
             {
                 if (item.Id == id)
                 {
                     BookList.Remove(item);
-                    break;
+                    return 1;
                 }
-
             }
-            return BookList;
+            return 0;
         }
 
         public List<Book> Get()
@@ -37,74 +36,78 @@ namespace WebApi.Services
             return BookList;
         }
 
-        public string Get(int id)
+        public Book Get(int id)
         {
-            string s = "";
             if (id <= 0)
-                s = "Invalid Id, Id should be a positive number.";
+                return null;
             else
             {
                 foreach (var item in BookList)
                 {
                     if (item.Id == id)
                     {
-                        s = item.Name;
-                        break;
-                    }
-                    else
-                    {
-                        s = "Book Not Found";
+                        return item;
                     }
                 }
-            }                    
-            return s;
+            }
+            return null;
         }
 
-        public List<Book> Post(Book book)
+        public int Post(Book book)
         {
             bool flag = true;
             if (book.Id <= 0 || book.Price <= 0)
-                flag = false;
+                return -1;
             else if (book.Name.Contains('0') || book.Name.Contains('1') ||
                     book.Name.Contains('2') || book.Name.Contains('3') ||
                     book.Name.Contains('4') || book.Name.Contains('5') ||
                     book.Name.Contains('6') || book.Name.Contains('7') ||
                     book.Name.Contains('8') || book.Name.Contains('9'))
-                flag = false;
+                return -1;
             else if (book.Author.Contains('0') || book.Author.Contains('1') ||
                     book.Author.Contains('2') || book.Author.Contains('3') ||
                     book.Author.Contains('4') || book.Author.Contains('5') ||
                     book.Author.Contains('6') || book.Author.Contains('7') ||
                     book.Author.Contains('8') || book.Author.Contains('9'))
-                flag = false;
+                return -1;
             else if (book.Category.Contains('0') || book.Category.Contains('1') ||
                     book.Category.Contains('2') || book.Category.Contains('3') ||
                     book.Category.Contains('4') || book.Category.Contains('5') ||
                     book.Category.Contains('6') || book.Category.Contains('7') ||
                     book.Category.Contains('8') || book.Category.Contains('9'))
-                flag = false;
+                return -1;
 
             if (flag)
             {
-                BookList.Add(book);
-                return BookList;
+                foreach(var item in BookList)
+                {
+                    if (item.Id == book.Id)
+                        return 0;
+                }
+                BookList.Add(book);                
             }
-
-            else
-                return BookList;
+            return 1;
         }         
 
-        public List<Book> Put(int id, string name)
+        public int Put(int id, Book book)
         {
-            foreach (var item in BookList)
+            if (id <= 0)
+                return -1;
+            else
             {
-                if (item.Id == id)
+                foreach (var item in BookList)
                 {
-                    item.Name = name;
-                    break;
+                    if (item.Id == id)
+                    {
+                        item.Name = book.Name;
+                        item.Author = book.Author;
+                        item.Category = book.Category;
+                        item.Price = book.Price;
+                        return 1;
+                    }
                 }
-            }
-            return BookList;
+            }            
+            return 0;
         }
     }
 }
