@@ -10,26 +10,26 @@ namespace WebAPITests
 {
     public class ServicesTests
     {
-        public List<Book> BookList;
+        public List<Book> bookList;
         public BookData BookData;
         public BookService BookService;
         public ServicesTests()
         {
             BookData = new BookData();
-            BookList = BookData.GetBookList();
+            bookList = BookData.GetBookList();
             BookService = new BookService();
         }
 
         [Fact]
         public void GetTest()
         {
-            List<Book> bookList = BookService.Get();
-            bool isSame = BookList.Count == bookList.Count ? true : false;
-            if (isSame)
+            List<Book> books = BookService.Get();
+            bool isCountSame = bookList.Count == books.Count ? true : false;
+            if (isCountSame)
             {
-                BookList.ForEach(Book => isSame = isSame && bookList.Any(book => book.Id == Book.Id && book.Name == Book.Name));
+                bookList.ForEach(bookList => isCountSame = isCountSame && books.Any(book => book.Id == bookList.Id && book.Name == bookList.Name));
             }
-            Assert.True(isSame);  
+            Assert.True(isCountSame);  
         }
          
         [Fact]

@@ -11,17 +11,17 @@ namespace WebApi.Services
 {
     public class BookService : IService
     {
-        private static List<Book> BookList;
+        //private static List<Book> BookList;
         private readonly BookData BookData;
         public BookService()
         {            
             BookData = new BookData();
-            BookList = BookData.GetBookList();
+            //BookList = BookData.GetBookList();
         }
                 
         public List<Book> Get()
         {
-            return BookList;
+            return BookData.GetBookList();
         }
 
         public Book Get(int id)
@@ -30,31 +30,22 @@ namespace WebApi.Services
                 return null;
             else
             {
-                foreach (var item in BookList)
-                {
-                    if (item.Id == id)
-                    {
-                        return item;
-                    }
-                }
-                return null;
+                return BookData.GetBookById(id);
             }            
         }
 
         public int Post(Book book)
         {
-            if (book.Id <= 0 || book.Price <= 0 || !Regex.IsMatch(book.Name, @"^[a-zA-Z# ]+$") || !Regex.IsMatch(book.Author, @"^[a-zA-Z# ]+$") || !Regex.IsMatch(book.Category, @"^[a-zA-Z# ]+$"))
+            bool validateName = Regex.IsMatch(book.Name, @"^[a-zA-Z# ]+$");
+            bool validateAuthor = Regex.IsMatch(book.Author, @"^[a-zA-Z# ]+$");
+            bool validateCategory = Regex.IsMatch(book.Category, @"^[a-zA-Z# ]+$");
+
+            if (book.Id <= 0 || book.Price <= 0 || !validateName || !validateAuthor || !validateCategory)
                 return -1;
             
             else
             {
-                foreach(var item in BookList)
-                {
-                    if (item.Id == book.Id)
-                        return 0;
-                }
-                BookList.Add(book);
-                return 1;
+                return BookData.AddBook(book);
             }
         }         
 
@@ -64,32 +55,15 @@ namespace WebApi.Services
                 return -1;
             else
             {
-                foreach (var item in BookList)
-                {
-                    if (item.Id == id)
-                    {
-                        item.Name = book.Name;
-                        item.Author = book.Author;
-                        item.Category = book.Category;
-                        item.Price = book.Price;
-                        return 1;
-                    }
-                }
-                return 0;
+                if (book.Equals(null))
+                    return 0;
+                return BookData.UpdateBook(id, book);
             } 
         }
 
         public int Delete(int id)
         {
-            foreach (var item in BookList)
-            {
-                if (item.Id == id)
-                {
-                    BookList.Remove(item);
-                    return 1;
-                }
-            }
-            return 0;
+            return BookData.DeleteBook(id);
         }
     }
 }
