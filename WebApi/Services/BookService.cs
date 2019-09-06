@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using WebApi.Model;
 using WebApi.Interfaces;
@@ -10,27 +11,14 @@ namespace WebApi.Services
 {
     public class BookService : IService
     {
-        private readonly List<Book> BookList;
+        private static List<Book> BookList;
         private readonly BookData BookData;
         public BookService()
         {            
             BookData = new BookData();
             BookList = BookData.GetBookList();
         }
-
-        public int Delete(int id)
-        {
-            foreach (var item in BookList)
-            {
-                if (item.Id == id)
-                {
-                    BookList.Remove(item);
-                    return 1;
-                }
-            }
-            return 0;
-        }
-
+                
         public List<Book> Get()
         {
             return BookList;
@@ -49,13 +37,13 @@ namespace WebApi.Services
                         return item;
                     }
                 }
-            }
-            return null;
+                return null;
+            }            
         }
 
         public int Post(Book book)
         {
-            if (book.Id <= 0 || book.Price <= 0 || !book.Name.All(char.IsLetter) || !book.Author.All(char.IsLetter) || !book.Category.All(char.IsLetter))
+            if (book.Id <= 0 || book.Price <= 0 || !Regex.IsMatch(book.Name, @"^[a-zA-Z# ]+$") || !Regex.IsMatch(book.Author, @"^[a-zA-Z# ]+$") || !Regex.IsMatch(book.Category, @"^[a-zA-Z# ]+$"))
                 return -1;
             
             else
@@ -65,9 +53,9 @@ namespace WebApi.Services
                     if (item.Id == book.Id)
                         return 0;
                 }
-                BookList.Add(book);                
+                BookList.Add(book);
+                return 1;
             }
-            return 1;
         }         
 
         public int Put(int id, Book book)
@@ -87,7 +75,20 @@ namespace WebApi.Services
                         return 1;
                     }
                 }
-            }            
+                return 0;
+            } 
+        }
+
+        public int Delete(int id)
+        {
+            foreach (var item in BookList)
+            {
+                if (item.Id == id)
+                {
+                    BookList.Remove(item);
+                    return 1;
+                }
+            }
             return 0;
         }
     }
