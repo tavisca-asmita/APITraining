@@ -42,16 +42,17 @@ namespace WebApi.Controllers
 
         // POST: api/Book
         [HttpPost]
-        public ActionResult<string> Post([FromBody] Book book)
+        public ActionResult<List<string>> Post([FromBody] Book book)
         {
-            int status = BookService.Post(book);
-            if (status == -1)
-                return BadRequest("Incorrect format");
-            if (status == 0)
+            List<string> errors = BookService.Post(book);
+            foreach(var error in errors)
             {
-                return BadRequest("ID already exists");
-            }
-            return book.Id + " Added";
+                if (error.Contains("Must"))
+                {
+                    return BadRequest(errors);
+                }
+            }                             
+                return Ok(errors);                     
         }
 
         // PUT: api/Book/5

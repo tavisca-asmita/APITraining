@@ -12,7 +12,7 @@ namespace WebApi.Interfaces
         Book Get(int id);
         //Book Put(int id, double price);
         int Put(int id, Book book);
-        int Post(Book book);
+        List<string> Post(Book book);
         //List<Book> Post(double price);
         int Delete(int id);
     }

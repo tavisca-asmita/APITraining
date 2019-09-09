@@ -1,23 +1,25 @@
-[
+{
+  "BookList": [
     {
-    "Name":"C#",
-    "Id":1,
-    "Author":"C# Author",
-    "Category":"Programming Language",
-    "Price":50.0
+      "Name": "F#",
+      "Category": "Programming Language",
+      "Author": "F# Author",
+      "Price": 80.0,
+      "Id": 2
     },
     {
-    "Name":"F#",
-    "Id":2,
-    "Author":"F# Author",
-    "Category":"Programming Language",
-    "Price":80.0
+      "Name": "Let Us C",
+      "Category": "Programming Language",
+      "Author": "C Author",
+      "Price": 100.0,
+      "Id": 3
     },
     {
-    "Name":"Let Us C",
-    "Id":3,
-    "Author":"C Author",
-    "Category":"Programming Language",
-    "Price":100.0
+      "Name": "C#",
+      "Category": "Programming Language",
+      "Author": "C# Author",
+      "Price": 50.0,
+      "Id": 1
     }
-]
+  ]
+}
