@@ -44,7 +44,8 @@ namespace WebApi.Controllers
         [HttpPost]
         public ActionResult<List<string>> Post([FromBody] Book book)
         {
-            List<string> errors = BookService.Post(book);
+            List<string> errors = new List<string>();
+            errors = BookService.Post(book);
             foreach(var error in errors)
             {
                 if (error.Contains("Must"))

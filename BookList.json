@@ -15,11 +15,11 @@
       "Id": 3
     },
     {
-      "Name": "C#",
-      "Category": "Programming Language",
-      "Author": "C# Author",
-      "Price": 50.0,
-      "Id": 1
+      "Name": "Java",
+      "Category": "Programming",
+      "Author": "George",
+      "Price": 100.0,
+      "Id": 4
     }
   ]
 }

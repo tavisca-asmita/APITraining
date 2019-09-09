@@ -59,7 +59,11 @@ namespace WebAPITests
                 Price = 100
             };
             List<string> status = BookService.Post(book);
-            //Assert.Equal("Added", status);
+            List<string> add = new List<string>
+            {
+                "Added"
+            };
+            Assert.Equal(add, status);
         }
 
         [Fact]
@@ -73,7 +77,11 @@ namespace WebAPITests
                 Category = "Programming",
                 Price = 100
             };
-            //Assert.Equal(" Id Must Be Positive ", BookService.Post(book));
+            List<string> error = new List<string>
+            {
+                "Id Must Not Be Negative"
+            };
+            Assert.Equal(error.Count, BookService.Post(book).Count);
         }
 
         [Fact]
@@ -87,14 +95,22 @@ namespace WebAPITests
                 Category = "Programming",
                 Price = 100
             };
-            //Assert.Equal(" Name Must Not Contain Digits ", BookService.Post(book));
+            List<string> error = new List<string>
+            {
+                "Name Must Not Contain Digits"
+            };
+            Assert.Equal(error, BookService.Post(book));
         }
 
         [Fact]
         public void AlreadyPresentPostTest()
         {
             Book book = new Book { Name = "F#", Id = 2, Price = 80, Author = "F# Author", Category = "Programming Language" };
-            //Assert.Equal("Present", BookService.Post(book));
+            List<string> present = new List<string>
+            {
+                "Present"
+            };
+            Assert.Equal(present, BookService.Post(book));
         }
 
         [Fact]

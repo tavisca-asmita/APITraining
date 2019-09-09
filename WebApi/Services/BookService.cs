@@ -51,6 +51,7 @@ namespace WebApi.Services
                     errors.Add("Author Must Not Contain Digits");
                 if (!validateCategory)
                     errors.Add("Category Must Not Contain Digits");
+                //return errors;
             }
             
             else
@@ -58,15 +59,13 @@ namespace WebApi.Services
                 int status = BookData.CheckIfBookExists(book);
                 if (status == 0)
                 {
-                    errors = null;
                     errors.Add("Present");
                 }
                 else
                 {
-                    errors = null;
                     errors.Add("Added");
                 }
-                    
+                
             }
             return errors;
         }         
