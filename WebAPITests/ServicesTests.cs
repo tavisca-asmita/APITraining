@@ -35,13 +35,13 @@ namespace WebAPITests
         [Fact]
         public void GetByIdTest()
         {
-            Book book = BookService.Get(1);
+            Book book = BookService.Get(2);
             Book expectedBook = new Book
             {
-                Name = "C#",
-                Id = 1,
-                Price = 50,
-                Author = "C# Author",
+                Name = "Let Us C",
+                Id = 2,
+                Price = 100,
+                Author = "C Author",
                 Category = "Programming Language"
             };
             Assert.Equal(expectedBook.Id, book.Id);
@@ -52,7 +52,7 @@ namespace WebAPITests
         {
             Book book = new Book
             {
-                Id = 4,
+                Id = 5,
                 Name = "Java",
                 Author = "George",
                 Category = "Programming",
@@ -105,7 +105,7 @@ namespace WebAPITests
         [Fact]
         public void AlreadyPresentPostTest()
         {
-            Book book = new Book { Name = "F#", Id = 2, Price = 80, Author = "F# Author", Category = "Programming Language" };
+            Book book = new Book { Name = "Scala", Id = 4, Price = 80, Author = "Scala Author", Category = "Programming Language" };
             List<string> present = new List<string>
             {
                 "Present"
@@ -116,21 +116,21 @@ namespace WebAPITests
         [Fact]
         public void PutTest()
         {
-            Book book = new Book { Name = "C#", Id = 1, Price = 60, Author = "C# Author", Category = "Programming Language" };
+            Book book = new Book { Name = "F Sharp", Id = 1, Price = 60, Author = "F Author", Category = "Programming Language" };
             Assert.Equal(1, BookService.Put(1, book));
         }
 
         [Fact]
         public void NegativeIdPutTest()
         {
-            Book book = new Book { Name = "C#", Id = -1, Price = 60, Author = "C# Author", Category = "Programming Language" };
+            Book book = new Book { Name = "C", Id = -1, Price = 60, Author = "C Author", Category = "Programming Language" };
             Assert.Equal(-1, BookService.Put(-1, book));
         }
 
         [Fact]
         public void NoContentPutTest()
         {
-            Book book = new Book { Name = "C#", Id = 1, Price = 60, Author = "C# Author", Category = "Programming Language" };
+            Book book = new Book { Name = "C", Id = 1, Price = 60, Author = "C Author", Category = "Programming Language" };
             Assert.Equal(0, BookService.Put(6, book));
         }
 

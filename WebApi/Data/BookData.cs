@@ -1,9 +1,6 @@
 ﻿using System.IO;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using WebApi.Model;
-using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 
 namespace WebApi.Data
@@ -49,22 +46,10 @@ namespace WebApi.Data
             JsonDeserializer();
             return BookList;
         }
-
-        public Book GetBookById(int id)
-        {
-            JsonDeserializer();
-            foreach (var item in BookList)
-            {
-                if (item.Id == id)
-                {
-                    return item;
-                }
-            }
-            return null;
-        }
-
+        
         public void AddBook(Book book)
         {
+            JsonDeserializer();
             if (BookList == null)
                 InitializeBookList();
             BookList.Add(book);
@@ -83,38 +68,22 @@ namespace WebApi.Data
             return 1;                           
         }
 
-        public int UpdateBook(int id, Book book)
+        public void UpdateBook(int index, Book book)
         {
-            JsonDeserializer();
-            foreach (var item in BookList)
-            {
-                if (item.Id == id)
-                {
-                    item.Id = book.Id;
-                    item.Name = book.Name;
-                    item.Price = book.Price;
-                    item.Author = book.Author;
-                    item.Category = book.Category;
-                    JsonSerializer();
-                    return 1;
-                }
-            }
-            return 0;
+            JsonDeserializer();            
+            BookList[index].Id = book.Id;
+            BookList[index].Name = book.Name;
+            BookList[index].Price = book.Price;
+            BookList[index].Author = book.Author;
+            BookList[index].Category = book.Category;
+            JsonSerializer();
         }
 
-        public int DeleteBook(int id)
+        public void DeleteBook(Book book)
         {
             JsonDeserializer();
-            foreach (var item in BookList)
-            {
-                if (item.Id == id)
-                {
-                    BookList.Remove(item);
-                    JsonSerializer();
-                    return 1;
-                }                
-            }
-            return 0;            
+            BookList.Remove(book);
+            JsonSerializer();
         }
 
     }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Model;
 using WebApi.Services;
@@ -14,6 +10,8 @@ namespace WebApi.Controllers
     [ApiController]
     public class BookController : ControllerBase
     {
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(typeof(ValuesController));
+
         public readonly BookService BookService;
         public BookController()
         {
@@ -24,6 +22,7 @@ namespace WebApi.Controllers
         [HttpGet]
         public ActionResult<List<Book>> Get()
         {
+            log.Info("Get() Book");
             List<Book> bookList = BookService.Get();
             if (bookList == null)
                 return NoContent();
@@ -34,26 +33,29 @@ namespace WebApi.Controllers
         [HttpGet("{id}", Name = "Get")]
         public ActionResult<IEnumerable<Book>> Get(int id)
         {
-            Book book = BookService.Get(id);
-            if (book != null)
-                return Ok(book);
-            return NoContent();
+            log.Info("Get(id) Book");
+            if (id > 0)
+            {
+                Book book = BookService.Get(id);
+                if (book != null)
+                    return Ok(book);
+                return NoContent();
+            }
+            else
+                return BadRequest("Id Must Be Positive");
+            
         }
 
         // POST: api/Book
         [HttpPost]
         public ActionResult<List<string>> Post([FromBody] Book book)
         {
-            List<string> errors = new List<string>();
-            errors = BookService.Post(book);
-            foreach(var error in errors)
-            {
-                if (error.Contains("Must"))
-                {
-                    return BadRequest(errors);
-                }
-            }                             
-                return Ok(errors);                     
+            List<string> results = new List<string>();
+            results = BookService.Post(book);            
+            if (results[0].Contains("Must"))
+                return BadRequest(results);
+            else
+                return Ok(results);                     
         }
 
         // PUT: api/Book/5

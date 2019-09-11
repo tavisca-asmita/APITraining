@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using FluentValidation.Results;
 using WebApi.Model;
 using WebApi.Interfaces;
 using WebApi.Data;
+using WebApi.Validation;
 
 namespace WebApi.Services
 {
@@ -24,50 +22,48 @@ namespace WebApi.Services
 
         public Book Get(int id)
         {
-            if (id <= 0)
+            var validator = new IdValidator();
+            ValidationResult validationResult = validator.Validate(id);
+            bool success = validationResult.IsValid;
+            if (!success)
                 return null;
             else
             {
-                return BookData.GetBookById(id);
+                List<Book> bookList = BookData.GetBookList();
+                foreach (var item in bookList)
+                {
+                    if (item.Id == id)
+                        return item;
+                }
+                return null;
             }            
         }
 
         public List<string> Post(Book book)
         {
-            List<string> errors = new List<string>();
-            bool validateName = Regex.IsMatch(book.Name, @"^[a-zA-Z# ]+$");
-            bool validateAuthor = Regex.IsMatch(book.Author, @"^[a-zA-Z# ]+$");
-            bool validateCategory = Regex.IsMatch(book.Category, @"^[a-zA-Z# ]+$");
-
-            if(book.Id <= 0 || book.Price <= 0 || !validateName || !validateAuthor || !validateCategory)
-            {
-                if (book.Id <= 0)
-                    errors.Add("Id Must Not Be Negative");
-                if (book.Price <= 0)
-                    errors.Add("Price Must Be Positive");
-                if (!validateName)
-                    errors.Add("Name Must Not Contain Digits");
-                if (!validateAuthor)
-                    errors.Add("Author Must Not Contain Digits");
-                if (!validateCategory)
-                    errors.Add("Category Must Not Contain Digits");
-                //return errors;
-            }
+            List<string> results = new List<string>();
+            var validator = new BookValidator();
+            ValidationResult validationResult = validator.Validate(book);
+            bool success = validationResult.IsValid;
             
+            if (!success)
+            {
+                IList<ValidationFailure> validationFailures = validationResult.Errors;
+                foreach (var error in validationFailures)
+                {
+                    results.Add(error.ToString());
+                }
+                return results;
+            }
             else
             {
                 int status = BookData.CheckIfBookExists(book);
                 if (status == 0)
-                {
-                    errors.Add("Present");
-                }
+                    results.Add("Present");
                 else
-                {
-                    errors.Add("Added");
-                }
-                
+                    results.Add("Added");
+                return results;
             }
-            return errors;
         }         
 
         public int Put(int id, Book book)
@@ -78,13 +74,33 @@ namespace WebApi.Services
             {
                 if (book.Equals(null))
                     return 0;
-                return BookData.UpdateBook(id, book);
+                List<Book> bookList = BookData.GetBookList();
+                foreach (var item in bookList)
+                {
+                    if (item.Id == id)
+                    {
+                        int index = bookList.IndexOf(item);
+                        BookData.UpdateBook(index, book);
+                        return 1;
+                    }
+                }
+                BookData.AddBook(book);
+                return 1;                
             } 
         }
 
         public int Delete(int id)
         {
-            return BookData.DeleteBook(id);
+            List<Book> bookList = BookData.GetBookList();
+            foreach (var item in bookList)
+            {
+                if (item.Id == id)
+                {
+                    BookData.DeleteBook(item);
+                    return 1;
+                }
+            }
+            return 0;
         }
     }
 }

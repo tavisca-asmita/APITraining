@@ -1,0 +1,166 @@
+2019-09-09 18:50:10,297 [1] INFO Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager - User profile is available. Using 'C:\Users\assharma\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-09-09 18:50:13,343 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/api/values  
+2019-09-09 18:50:13,392 [9] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'WebApi.Controllers.ValuesController.Get (WebApi)'
+2019-09-09 18:50:13,480 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller WebApi.Controllers.ValuesController (WebApi).
+2019-09-09 18:50:13,503 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method WebApi.Controllers.ValuesController.Get (WebApi) - Validation state: Valid
+2019-09-09 18:50:13,517 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method WebApi.Controllers.ValuesController.Get (WebApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.6563ms.
+2019-09-09 18:50:13,540 [9] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+2019-09-09 18:50:13,683 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action WebApi.Controllers.ValuesController.Get (WebApi) in 183.3139ms
+2019-09-09 18:50:13,699 [9] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'WebApi.Controllers.ValuesController.Get (WebApi)'
+2019-09-09 18:50:13,740 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 369.6963ms 200 application/json; charset=utf-8
+2019-09-09 18:50:32,393 [6] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/api/book/  
+2019-09-09 18:50:32,409 [6] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'WebApi.Controllers.BookController.Get (WebApi)'
+2019-09-09 18:50:32,415 [6] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Book"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[WebApi.Model.Book]] Get() on controller WebApi.Controllers.BookController (WebApi).
+2019-09-09 18:50:32,430 [6] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method WebApi.Controllers.BookController.Get (WebApi) - Validation state: Valid
+2019-09-09 18:50:32,434 [6] INFO WebApi.Controllers.ValuesController - Get() Book
+2019-09-09 18:50:32,470 [6] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method WebApi.Controllers.BookController.Get (WebApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 34.5839ms.
+2019-09-09 18:50:32,476 [6] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebApi.Model.Book, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2019-09-09 18:50:32,490 [6] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action WebApi.Controllers.BookController.Get (WebApi) in 63.928ms
+2019-09-09 18:50:32,496 [6] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'WebApi.Controllers.BookController.Get (WebApi)'
+2019-09-09 18:50:32,536 [6] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 111.5374ms 200 application/json; charset=utf-8
+2019-09-09 18:50:45,640 [11] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/api/book/ application/json 126
+2019-09-09 18:50:45,655 [11] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'WebApi.Controllers.BookController.Get (WebApi)'
+2019-09-09 18:50:45,662 [11] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Book"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[WebApi.Model.Book]] Get() on controller WebApi.Controllers.BookController (WebApi).
+2019-09-09 18:50:45,674 [11] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method WebApi.Controllers.BookController.Get (WebApi) - Validation state: Valid
+2019-09-09 18:50:45,679 [11] INFO WebApi.Controllers.ValuesController - Get() Book
+2019-09-09 18:50:45,689 [11] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method WebApi.Controllers.BookController.Get (WebApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 5.3274ms.
+2019-09-09 18:50:45,696 [11] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebApi.Model.Book, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2019-09-09 18:50:45,707 [11] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action WebApi.Controllers.BookController.Get (WebApi) in 35.7389ms
+2019-09-09 18:50:45,719 [11] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'WebApi.Controllers.BookController.Get (WebApi)'
+2019-09-09 18:50:45,728 [11] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 88.2949ms 200 application/json; charset=utf-8
+2019-09-09 18:50:45,874 [11] INFO Microsoft.AspNetCore.Server.Kestrel - Connection id "0HLPL51OPS6D5", Request id "0HLPL51OPS6D5:00000001": the application completed without reading the entire request body.
+2019-09-09 18:51:47,122 [1] INFO Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager - User profile is available. Using 'C:\Users\assharma\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-09-09 18:51:47,604 [6] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/2.0 GET https://localhost:44309/api/values  
+2019-09-09 18:51:47,647 [6] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'WebApi.Controllers.ValuesController.Get (WebApi)'
+2019-09-09 18:51:47,666 [6] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller WebApi.Controllers.ValuesController (WebApi).
+2019-09-09 18:51:47,676 [6] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method WebApi.Controllers.ValuesController.Get (WebApi) - Validation state: Valid
+2019-09-09 18:51:47,680 [6] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method WebApi.Controllers.ValuesController.Get (WebApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.3613ms.
+2019-09-09 18:51:47,689 [6] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+2019-09-09 18:51:47,753 [6] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action WebApi.Controllers.ValuesController.Get (WebApi) in 82.7743ms
+2019-09-09 18:51:47,756 [6] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'WebApi.Controllers.ValuesController.Get (WebApi)'
+2019-09-09 18:51:47,761 [6] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 156.8979ms 200 application/json; charset=utf-8
+2019-09-09 18:51:53,607 [7] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/2.0 GET https://localhost:44309/api/book/  
+2019-09-09 18:51:53,611 [7] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'WebApi.Controllers.BookController.Get (WebApi)'
+2019-09-09 18:51:53,620 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Book"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[WebApi.Model.Book]] Get() on controller WebApi.Controllers.BookController (WebApi).
+2019-09-09 18:51:53,626 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method WebApi.Controllers.BookController.Get (WebApi) - Validation state: Valid
+2019-09-09 18:51:53,630 [7] INFO WebApi.Controllers.ValuesController - Get() Book
+2019-09-09 18:51:53,655 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method WebApi.Controllers.BookController.Get (WebApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 25.6454ms.
+2019-09-09 18:51:53,658 [7] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebApi.Model.Book, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2019-09-09 18:51:53,663 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action WebApi.Controllers.BookController.Get (WebApi) in 38.4451ms
+2019-09-09 18:51:53,666 [7] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'WebApi.Controllers.BookController.Get (WebApi)'
+2019-09-09 18:51:53,671 [7] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 63.7166ms 200 application/json; charset=utf-8
+2019-09-09 18:52:20,719 [7] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:44309/api/book/ application/json 126
+2019-09-09 18:52:20,723 [7] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'WebApi.Controllers.BookController.Get (WebApi)'
+2019-09-09 18:52:20,726 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Book"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[WebApi.Model.Book]] Get() on controller WebApi.Controllers.BookController (WebApi).
+2019-09-09 18:52:20,729 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method WebApi.Controllers.BookController.Get (WebApi) - Validation state: Valid
+2019-09-09 18:52:20,731 [7] INFO WebApi.Controllers.ValuesController - Get() Book
+2019-09-09 18:52:20,734 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method WebApi.Controllers.BookController.Get (WebApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2.6261ms.
+2019-09-09 18:52:20,736 [7] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebApi.Model.Book, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2019-09-09 18:52:20,741 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action WebApi.Controllers.BookController.Get (WebApi) in 12.029ms
+2019-09-09 18:52:20,743 [7] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'WebApi.Controllers.BookController.Get (WebApi)'
+2019-09-09 18:52:20,745 [7] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 26.2856ms 200 application/json; charset=utf-8
+2019-09-09 18:52:30,898 [18] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST https://localhost:44309/api/book/ application/json 126
+2019-09-09 18:52:30,902 [18] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'WebApi.Controllers.BookController.Post (WebApi)'
+2019-09-09 18:52:30,964 [18] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Post", controller = "Book"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[System.String]] Post(WebApi.Model.Book) on controller WebApi.Controllers.BookController (WebApi).
+2019-09-09 18:52:31,001 [18] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method WebApi.Controllers.BookController.Post (WebApi) - Validation state: Valid
+2019-09-09 18:52:31,129 [18] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method WebApi.Controllers.BookController.Post (WebApi), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 125.0894ms.
+2019-09-09 18:52:31,132 [18] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2019-09-09 18:52:31,136 [18] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action WebApi.Controllers.BookController.Post (WebApi) in 169.1855ms
+2019-09-09 18:52:31,138 [18] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'WebApi.Controllers.BookController.Post (WebApi)'
+2019-09-09 18:52:31,142 [18] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 243.9019ms 400 application/json; charset=utf-8
+2019-09-09 18:52:39,168 [18] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:44309/api/book/ application/json 126
+2019-09-09 18:52:39,171 [18] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'WebApi.Controllers.BookController.Get (WebApi)'
+2019-09-09 18:52:39,174 [18] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Book"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[WebApi.Model.Book]] Get() on controller WebApi.Controllers.BookController (WebApi).
+2019-09-09 18:52:39,178 [18] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method WebApi.Controllers.BookController.Get (WebApi) - Validation state: Valid
+2019-09-09 18:52:39,183 [18] INFO WebApi.Controllers.ValuesController - Get() Book
+2019-09-09 18:52:39,189 [18] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method WebApi.Controllers.BookController.Get (WebApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 5.7936ms.
+2019-09-09 18:52:39,194 [18] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebApi.Model.Book, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2019-09-09 18:52:39,197 [18] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action WebApi.Controllers.BookController.Get (WebApi) in 19.1517ms
+2019-09-09 18:52:39,200 [18] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'WebApi.Controllers.BookController.Get (WebApi)'
+2019-09-09 18:52:39,203 [18] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 35.3095ms 200 application/json; charset=utf-8
+2019-09-09 18:53:24,974 [17] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 PUT https://localhost:44309/api/book/1 application/json 113
+2019-09-09 18:53:24,981 [17] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'WebApi.Controllers.BookController.Put (WebApi)'
+2019-09-09 18:53:25,004 [17] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Put", controller = "Book"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Put(Int32, WebApi.Model.Book) on controller WebApi.Controllers.BookController (WebApi).
+2019-09-09 18:53:25,009 [17] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method WebApi.Controllers.BookController.Put (WebApi) - Validation state: Valid
+2019-09-09 18:53:25,013 [17] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method WebApi.Controllers.BookController.Put (WebApi), returned result Microsoft.AspNetCore.Mvc.NoContentResult in 1.993ms.
+2019-09-09 18:53:25,018 [17] INFO Microsoft.AspNetCore.Mvc.StatusCodeResult - Executing HttpStatusCodeResult, setting HTTP status code 204
+2019-09-09 18:53:25,025 [17] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action WebApi.Controllers.BookController.Put (WebApi) in 18.6204ms
+2019-09-09 18:53:25,027 [17] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'WebApi.Controllers.BookController.Put (WebApi)'
+2019-09-09 18:53:25,032 [17] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 57.2783ms 204 
+2019-09-09 18:53:36,868 [20] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 PUT https://localhost:44309/api/book/6 application/json 113
+2019-09-09 18:53:36,872 [20] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'WebApi.Controllers.BookController.Put (WebApi)'
+2019-09-09 18:53:36,879 [20] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Put", controller = "Book"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Put(Int32, WebApi.Model.Book) on controller WebApi.Controllers.BookController (WebApi).
+2019-09-09 18:53:36,887 [20] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method WebApi.Controllers.BookController.Put (WebApi) - Validation state: Valid
+2019-09-09 18:53:36,898 [20] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method WebApi.Controllers.BookController.Put (WebApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 6.6544ms.
+2019-09-09 18:53:36,900 [20] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String'.
+2019-09-09 18:53:36,903 [20] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action WebApi.Controllers.BookController.Put (WebApi) in 16.0164ms
+2019-09-09 18:53:36,905 [20] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'WebApi.Controllers.BookController.Put (WebApi)'
+2019-09-09 18:53:36,909 [20] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 41.6352ms 200 text/plain; charset=utf-8
+2019-09-09 18:53:44,311 [21] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:44309/api/book/ application/json 113
+2019-09-09 18:53:44,316 [21] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'WebApi.Controllers.BookController.Get (WebApi)'
+2019-09-09 18:53:44,335 [21] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Book"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[WebApi.Model.Book]] Get() on controller WebApi.Controllers.BookController (WebApi).
+2019-09-09 18:53:44,340 [21] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method WebApi.Controllers.BookController.Get (WebApi) - Validation state: Valid
+2019-09-09 18:53:44,343 [21] INFO WebApi.Controllers.ValuesController - Get() Book
+2019-09-09 18:53:44,350 [21] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method WebApi.Controllers.BookController.Get (WebApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 7.0793ms.
+2019-09-09 18:53:44,353 [21] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebApi.Model.Book, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2019-09-09 18:53:44,361 [21] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action WebApi.Controllers.BookController.Get (WebApi) in 21.3156ms
+2019-09-09 18:53:44,364 [21] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'WebApi.Controllers.BookController.Get (WebApi)'
+2019-09-09 18:53:44,366 [21] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 55.7739ms 200 application/json; charset=utf-8
+2019-09-09 18:58:44,895 [1] INFO Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager - User profile is available. Using 'C:\Users\assharma\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-09-09 18:58:45,360 [10] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/2.0 GET https://localhost:44309/api/values  
+2019-09-09 18:58:45,415 [10] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'WebApi.Controllers.ValuesController.Get (WebApi)'
+2019-09-09 18:58:45,437 [10] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Values"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller WebApi.Controllers.ValuesController (WebApi).
+2019-09-09 18:58:45,450 [10] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method WebApi.Controllers.ValuesController.Get (WebApi) - Validation state: Valid
+2019-09-09 18:58:45,455 [10] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method WebApi.Controllers.ValuesController.Get (WebApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.433ms.
+2019-09-09 18:58:45,465 [10] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String[]'.
+2019-09-09 18:58:45,534 [10] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action WebApi.Controllers.ValuesController.Get (WebApi) in 92.4863ms
+2019-09-09 18:58:45,538 [10] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'WebApi.Controllers.ValuesController.Get (WebApi)'
+2019-09-09 18:58:45,544 [10] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 183.8462ms 200 application/json; charset=utf-8
+2019-09-09 18:58:50,120 [10] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/2.0 GET https://localhost:44309/api/book/  
+2019-09-09 18:58:50,127 [10] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'WebApi.Controllers.BookController.Get (WebApi)'
+2019-09-09 18:58:50,133 [10] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Book"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[WebApi.Model.Book]] Get() on controller WebApi.Controllers.BookController (WebApi).
+2019-09-09 18:58:50,137 [10] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method WebApi.Controllers.BookController.Get (WebApi) - Validation state: Valid
+2019-09-09 18:58:50,143 [10] INFO WebApi.Controllers.ValuesController - Get() Book
+2019-09-09 18:58:50,179 [10] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method WebApi.Controllers.BookController.Get (WebApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 37.1515ms.
+2019-09-09 18:58:50,186 [10] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebApi.Model.Book, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2019-09-09 18:58:50,194 [10] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action WebApi.Controllers.BookController.Get (WebApi) in 58.1868ms
+2019-09-09 18:58:50,197 [10] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'WebApi.Controllers.BookController.Get (WebApi)'
+2019-09-09 18:58:50,203 [10] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 83.5174ms 200 application/json; charset=utf-8
+2019-09-09 18:58:58,737 [7] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:44309/api/book/ application/json 113
+2019-09-09 18:58:58,740 [7] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'WebApi.Controllers.BookController.Get (WebApi)'
+2019-09-09 18:58:58,751 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Book"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[WebApi.Model.Book]] Get() on controller WebApi.Controllers.BookController (WebApi).
+2019-09-09 18:58:58,757 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method WebApi.Controllers.BookController.Get (WebApi) - Validation state: Valid
+2019-09-09 18:58:58,759 [7] INFO WebApi.Controllers.ValuesController - Get() Book
+2019-09-09 18:58:58,762 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method WebApi.Controllers.BookController.Get (WebApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2.8411ms.
+2019-09-09 18:58:58,764 [7] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebApi.Model.Book, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2019-09-09 18:58:58,770 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action WebApi.Controllers.BookController.Get (WebApi) in 12.9704ms
+2019-09-09 18:58:58,772 [7] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'WebApi.Controllers.BookController.Get (WebApi)'
+2019-09-09 18:58:58,775 [7] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 38.3453ms 200 application/json; charset=utf-8
+2019-09-09 18:59:11,805 [7] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DELETE https://localhost:44309/api/book/6 application/json 113
+2019-09-09 18:59:11,807 [7] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'WebApi.Controllers.BookController.Delete (WebApi)'
+2019-09-09 18:59:11,827 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Delete", controller = "Book"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Delete(Int32) on controller WebApi.Controllers.BookController (WebApi).
+2019-09-09 18:59:11,846 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method WebApi.Controllers.BookController.Delete (WebApi) - Validation state: Valid
+2019-09-09 18:59:11,858 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method WebApi.Controllers.BookController.Delete (WebApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 7.7485ms.
+2019-09-09 18:59:11,861 [7] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.String'.
+2019-09-09 18:59:11,865 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action WebApi.Controllers.BookController.Delete (WebApi) in 35.7659ms
+2019-09-09 18:59:11,868 [7] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'WebApi.Controllers.BookController.Delete (WebApi)'
+2019-09-09 18:59:11,876 [7] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 71.2075ms 200 text/plain; charset=utf-8
+2019-09-09 18:59:19,959 [7] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:44309/api/book/ application/json 113
+2019-09-09 18:59:19,963 [7] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'WebApi.Controllers.BookController.Get (WebApi)'
+2019-09-09 18:59:19,969 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Book"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[WebApi.Model.Book]] Get() on controller WebApi.Controllers.BookController (WebApi).
+2019-09-09 18:59:19,976 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method WebApi.Controllers.BookController.Get (WebApi) - Validation state: Valid
+2019-09-09 18:59:19,979 [7] INFO WebApi.Controllers.ValuesController - Get() Book
+2019-09-09 18:59:19,984 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method WebApi.Controllers.BookController.Get (WebApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4.4197ms.
+2019-09-09 18:59:19,986 [7] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[WebApi.Model.Book, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2019-09-09 18:59:19,989 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action WebApi.Controllers.BookController.Get (WebApi) in 13.3384ms
+2019-09-09 18:59:19,991 [7] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'WebApi.Controllers.BookController.Get (WebApi)'
+2019-09-09 18:59:19,993 [7] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 34.2582ms 200 application/json; charset=utf-8
+2019-09-09 18:59:28,505 [7] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:44309/api/book/4 application/json 113
+2019-09-09 18:59:28,510 [7] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'WebApi.Controllers.BookController.Get (WebApi)'
+2019-09-09 18:59:28,520 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Get", controller = "Book"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[WebApi.Model.Book]] Get(Int32) on controller WebApi.Controllers.BookController (WebApi).
+2019-09-09 18:59:28,524 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method WebApi.Controllers.BookController.Get (WebApi) - Validation state: Valid
+2019-09-09 18:59:28,531 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method WebApi.Controllers.BookController.Get (WebApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3.2537ms.
+2019-09-09 18:59:28,534 [7] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'WebApi.Model.Book'.
+2019-09-09 18:59:28,536 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action WebApi.Controllers.BookController.Get (WebApi) in 12.8016ms
+2019-09-09 18:59:28,538 [7] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'WebApi.Controllers.BookController.Get (WebApi)'
+2019-09-09 18:59:28,540 [7] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 35.3705ms 200 application/json; charset=utf-8
