@@ -1,0 +1,32 @@
+{
+  "BookList": [
+    {
+      "Name": "Let Us C",
+      "Category": "Programming Language",
+      "Author": "C Author",
+      "Price": 100.0,
+      "Id": 2
+    },
+    {
+      "Name": "Ruby",
+      "Category": "Programming",
+      "Author": "George",
+      "Price": 100.0,
+      "Id": 3
+    },
+    {
+      "Name": "Scala",
+      "Category": "Programming Language",
+      "Author": "Scala Author",
+      "Price": 80.0,
+      "Id": 4
+    },
+    {
+      "Name": "Java",
+      "Category": "Programming",
+      "Author": "George",
+      "Price": 100.0,
+      "Id": 5
+    }
+  ]
+}
